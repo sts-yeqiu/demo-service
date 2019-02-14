@@ -1,0 +1,24 @@
+demo-service-server:
+  
+  controllers:
+    ☐ serverInfo 服务验证控制器:
+      ✔ GET /serverInfo 服务验证 @done(19-02-14 17:01)
+    ☐ token token控制器：
+      ✔ POST /token 获取token @done(19-02-14 17:04)
+    ☐ user 用户控制器：
+      ✔ POST /user/signin 用户登录 @done(19-02-14 17:04)
+      ✔ POST /userRegister 注册用户 @done(19-02-14 17:12)
+      ✔ PUT /users 修改用户信息 @done(19-02-14 17:13)
+      ✔ PUT /users/password 修改用户密码 @done(19-02-14 17:11)
+      ✔ GET /users/:userId/resetPassword 重置密码 @done(19-02-14 17:14)
+      ✔ GET /user/:userId/info 根据ID获取用户信息 @done(19-02-14 17:09)
+      ✔ GET /users 获取用户列表 @done(19-02-14 17:10)
+
+
+      
+  middlewares:
+  
+  models: 
+  
+  services:
+   

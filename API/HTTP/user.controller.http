@@ -1,0 +1,63 @@
+
+# @baseUrl = http://192.168.1.120:9500/demo
+@baseUrl = http://localhost:9500/demo
+
+@contentType = application/json
+@token=eyJhbGciOiJIUzI1NiJ9.eyJpc3N1ZXIiOiIiLCJleHBpcmVzSW4iOiI2MCAqIDYwICogMjQgKiAzMCIsInN1YmplY3QiOiIiLCJhdWRpZW5jZSI6IiIsIm5vdEJlZm9yZSI6MTU1MDAyODE3MCwiaXNzdWVkQXQiOjE1NTAwMjgxNzAsInVzZXJJZCI6IjVjNGU3YTBkZTgyYjM3Mzg2YzJmZWQxZiIsIm5hbWUiOiLku6Tni5DlhrIiLCJsb2dpbk5hbWUiOiJsaW5naHVjaG9uZyIsInJvbGVzIjoiYWRtaW4ifQ.9ZU9Y_Nu2mSs3e9l3fDUtJzbRD_89PYxzS5RonoIxdM
+
+###
+# 登录
+POST {{baseUrl}}/user/signin
+Content-Type: {{contentType}}
+{
+    "loginName":"linghuchong",
+	"password":"yrf"
+}
+
+# 参数说明：
+#    loginName 登录名
+#    password 密码
+###
+
+###
+# 获取token
+POST {{baseUrl}}/token
+Content-Type: {{contentType}}
+{
+    "loginName":"linghuchong",
+	"roles":"admin"
+}
+
+# 参数说明：
+#    loginName 登录名
+#    roles 角色
+###
+
+###
+# 获取用户信息
+# GET {{baseUrl}}/user/:userId/info
+GET {{baseUrl}}/user/5b9e0f34c9b9a434d008b980/info
+Content-Type: {{contentType}}
+token:{{token}}
+# 参数说明：
+    # userId 用户ID
+# 输出model:
+    # userId: string;
+    # isActive: boolean, //是否激活
+    # roles: [string], //角色（管理员:admin）
+    # name: string, //姓名
+    # loginName: string, //登陆名
+    # password: string, //密码
+    # memberId: any, //会员Id
+    # memberNum: string, //会员编号
+    # memberName: string, //会员名称
+    # gender: string, //性别（男:male 女:female）
+    # identityNumber: string, //身份证号
+    # mobile: string, //手机号
+    # email: string //邮箱
+    # createBy: any, //创建人
+    # createDate: Date, //创建时间
+    # updateBy: any, //更新人
+    # updateDate: Date //更新时间
+
+###

@@ -1,0 +1,14 @@
+{
+    "env": "test",
+    "server": {
+        "host": "192.168.1.120",
+        "http_port": 9500,
+        "https_port": 9501,
+        "keyFile": "./keys/server.key",
+        "certFile": "./keys/server.crt",
+        "downloadUrl": "http://192.168.1.120:9500/scm/download",
+        "downloadFilePath": "/home/app" 
+    },
+    "mongoUrl": "mongodb://192.168.1.120:27017/demoService",
+    "jwtKey": "a;lkdjsf;lkjsadfl;kjsadl2093485-02"
+}

@@ -1,0 +1,4 @@
+# 忽略 node_modules、dist、.vscode
+node_modules
+dist
+.vscode
