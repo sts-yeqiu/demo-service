@@ -5,18 +5,20 @@ import appConfig from '../../config';
 import { IMemberUser, MemberUserSchema } from '../../repository/mogoose/memberUser.entities';
 import { IDataDict, DataDictSchema } from "../../repository/mogoose/dataDict.entities";
 import { IFile, FileSchema } from "../../repository/mogoose/file.entities";
-
 import { MemberLogSchema, IMemberLog } from "../../repository/mogoose/memberLog.entities";
 import { IIdRule, IdRuleSchema } from "../../repository/mogoose/idRule.entities";
+import { IProject, ProjectSchema } from "../../repository/mogoose/project.entities";
+
 /**
- * 数据库集合
+ * 数据库集合枚举
  */
 export enum EntityNameEnum {
-  idRule = "idRule",
-  memberUser = "memberUser",
-  dataDict = "dataDict",
-  file = "file",
-  memberLog = "memberLog"
+  idRule = "idRule", //..计数规则
+  memberUser = "memberUser", //..用户
+  dataDict = "dataDict", //..数据字典
+  file = "file", //..文件
+  memberLog = "memberLog", //..会员日志
+  project = "project", //..项目
 }
 
 @Service()
@@ -29,6 +31,7 @@ export class MongoService {
   FileModel: Model<IFile>;//附件
   MemberLogModel: Model<IMemberLog>;//会员日志
   IdRuleModel: Model<IIdRule>;//流水号
+  ProjectModel: Model<IProject>;//项目
 
   constructor() {
     try {
@@ -69,10 +72,16 @@ export class MongoService {
         MemberLogSchema
       );
 
-     /** 流水号模型 */
+      /** 流水号模型 */
       this.IdRuleModel = this.connection.model<IIdRule>(
         EntityNameEnum.idRule,
         IdRuleSchema
+      );
+
+       /** 项目基本信息模型*/
+       this.ProjectModel = this.connection.model<IProject>(
+        EntityNameEnum.project,
+        ProjectSchema
       );
 
       resolve();

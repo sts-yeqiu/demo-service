@@ -7,11 +7,15 @@ import { DebugHandler } from "./services/events-handlers/debugHandler.service";
 import { ServerInfoController } from "./controllers/serverInfo.controller";
 import { UserController } from "./controllers/user.controller";
 import { TokenController } from "./controllers/token.controller";
+import { FileController } from "./controllers/file.controller";
+import { ProjectController } from "./controllers/project.controller";
 
 export const CONTROLLERS: any[] = [
     UserController,
     TokenController,
-    ServerInfoController
+    ServerInfoController,
+    FileController,
+    ProjectController
 ];
 
 export const MIDDLEWARES = [AuthMiddleware, ErrorMiddleware, LoggingMiddleware, ListMiddleware, LogMiddleware];

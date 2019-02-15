@@ -2,7 +2,6 @@ import { Service } from 'typedi';
 import { RequestService } from './request.service';
 let smsHost = "http://192.168.1.5:9462";
 
-//todo:     seven 
 
 @Service()
 export class smsSendService {//供外部调用的服务类

@@ -1,6 +1,5 @@
 import {ExpressMiddlewareInterface, Middleware} from "routing-controllers";
 
-//todo:     sean    8.10    logging reqeust middleware.
 
 //logging reqeust middleware
 @Middleware({ type: "after" })

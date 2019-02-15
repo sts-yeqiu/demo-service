@@ -1,7 +1,5 @@
 import * as request from "request"; 
 
-//todo:     sean    8.10    http requesting service
-
 export class RequestService {
     constructor() { }
 
